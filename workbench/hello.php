@@ -5,4 +5,4 @@ require_once 'header.php';
 require_once 'footer.php';
 ?>
 
-<p>hello world</p>
+<?php echo 'hello' ?>
