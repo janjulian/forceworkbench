@@ -42,7 +42,8 @@ $GLOBALS["MENUS"] = array(
         'help.php'            => new Page('Help','Get help about using Workbench.',false,true,true,false,true,''),
         'about.php'           => new Page('About','Learn about Workbench.',false,true,true,false,true,''),
         'terms.php'           => new Page('Terms of Service','Terms of Service.',false,true,false,false,true,''),
-        'healthcheck.php'     => new Page('Health Check','Health Check',false,true,false,false,false,'')
+        'healthcheck.php'     => new Page('Health Check','Health Check',false,true,false,false,false,''),
+        'hello.php'           => new Page('Hello','Hello Page',true,true,false,false,false,'')
     ),
 
     'Info' => array(
