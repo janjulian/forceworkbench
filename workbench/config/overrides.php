@@ -51,4 +51,10 @@ $config["nonce"]["default"] = "aojzmL4AKy1s5T5JnQ1yn+2U";
 // $config["orgIdWhiteList"]["default"] = "00D000000000001, 00D000000000002";
 // $config["orgIdBlackList"]["default"] = "00D000000000003";
 
+$config['defaultLoginType']['default'] = "adv";
+$config['defaultInstance']['valuesToLabels'] = array(
+        "login" => array("Login: Production/Developer",""),
+        "test"  => array("Login: Sandbox (test)","")
+);
+
 ?>
