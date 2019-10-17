@@ -127,7 +127,7 @@ if (WorkbenchConfig::get()->value("checkForLatestVersion") && extension_loaded('
 
 
 <div id='mainBlock'>
-<a href="limits.php">View limits</a>
+
 <div id='navMenu' style="clear: both;">
     <span class="preload1"></span>
     <span class="preload2"></span>
