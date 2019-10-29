@@ -14,5 +14,13 @@
         "forceworkbench__loginCsrfEnabled__default": "true",
         "forceworkbench__streamingAdviceTimeout__default": "10000"
     },
-    "success_url": "/login.php"
+    "success_url": "/login.php",
+    "buildpacks": [
+        {
+          "url": "heroku/ruby"
+        },
+        {
+          "url": "https://github.com/heroku/salesforce-cli-buildpack"
+        }
+      ]
 }
