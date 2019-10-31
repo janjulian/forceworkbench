@@ -12,7 +12,17 @@
         "forceworkbench__csrfSecret__default": { "generator":"secret" },
         "forceworkbench__logHandler__default": "stderr",
         "forceworkbench__loginCsrfEnabled__default": "true",
-        "forceworkbench__streamingAdviceTimeout__default": "10000"
+        "forceworkbench__streamingAdviceTimeout__default": "10000",
+        "SFDX_ADMIN_USERNAME" : "jan@wb1.graycloud.ca",
+        "SFDC_WORKBENCH_APP_CLIENT_ID" : "3MVG9LBJLApeX_PDu5X5iTvMaoJjq1u0kCekmKncb6agKu8ui9DVHFO5R0LlMJlUXoI2dBpNR8ot7rx._aZab",
+        "CERT_KEY" : "1o2ebrands2"
+    },
+    "buildpacks" : [
+        { "url" : "heroku/php" },
+        { "url" : "https://github.com/heroku/salesforce-cli-buildpack" }
+    ],
+    "scripts" : {
+        "postdeploy" : "./scripts/sfdx_auth"
     },
     "success_url": "/login.php"
 }

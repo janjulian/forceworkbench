@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Authorizing admin connection with org as '$SFDX_ADMIN_USERNAME'."
+
+# Decrypt server.key. Used for JWT authorization.
+openssl aes-256-cbc -k $CERT_KEY -in server.key.enc -out server.key -d
+
+# Authenticate 
+sfdx force:auth:jwt:grant --clientid $SFDC_WORKBENCH_APP_CLIENT_ID --jwtkeyfile server.key -u $SFDX_ADMIN_USERNAME --setalias sfdx-org-admin
+
+rm server.key
