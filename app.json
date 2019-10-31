@@ -21,8 +21,5 @@
         { "url" : "heroku/php" },
         { "url" : "https://github.com/heroku/salesforce-cli-buildpack" }
     ],
-    "scripts" : {
-        "postdeploy" : "./scripts/sfdx_auth"
-    },
     "success_url": "/login.php"
 }
