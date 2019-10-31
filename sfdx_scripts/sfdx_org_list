@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source sfdx_auth
+
+echo "SFDX: Printing orgs"
+sfdx force:org:list
