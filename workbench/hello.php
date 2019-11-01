@@ -7,7 +7,7 @@ include_once 'header.php';
 <?php 
 
 echo "<div>Sfdx:</div>";
-echo shell_exec('./../sfdx_scripts/sfdx_org_list');
+echo shell_exec('bash ./../sfdx_scripts/sfdx_org_list');
 
 ?>
 
