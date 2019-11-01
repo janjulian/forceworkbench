@@ -1,25 +1,19 @@
 #!/bin/bash
 
+set -x
 
-# Decrypt server.key. Used for JWT authorization.
-echo "Decrypting certificate." &&
 openssl aes-256-cbc -d -md sha512 -pass pass:$CERT_KEY -in $HOME/assets/server.key.enc -out $HOME/assets/server.key -d &&
 
-# Authenticate 
-echo "Authorizing admin connection with org as '$SFDX_ADMIN_USERNAME'." &&
+printf "Authorizing admin connection with org as '$SFDX_ADMIN_USERNAME'." &&
 sfdx force:auth:jwt:grant --clientid $SFDC_WORKBENCH_APP_CLIENT_ID --jwtkeyfile $HOME/assets/server.key -u $SFDX_ADMIN_USERNAME --setalias sfdx-org-admin &&
 
-# Remove server.key
-echo "Removing certificate."
 rm server.key &&
 
-echo "Printing orgs."
+printf "List orgs:\n"
 sfdx force:org:list 
 
-echo "."
-echo "Printing SFDX plugins."
+printf "List plugins:\n"
 sfdx plugins
 
-echo "."
-echo "Printing O2E commands."
+printf "List O2E commands:\n"
 sfdx commands | grep o2e11
