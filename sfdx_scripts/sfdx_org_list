@@ -16,6 +16,6 @@ rm server.key &&
 echo "Printing orgs."
 sfdx force:org:list 
 
-echo ""
+echo "."
 echo "Printing O2E commands."
-sfdx commands | grep o2e 
+sfdx commands | grep o2e11
