@@ -2,18 +2,17 @@
 
 set -x
 
+printf "\nAuthorizing admin connection with org as '$SFDX_ADMIN_USERNAME'...\n" &&
+
 openssl aes-256-cbc -d -md sha512 -pass pass:$CERT_KEY -in $HOME/assets/server.key.enc -out $HOME/assets/server.key -d &&
-
-printf "Authorizing admin connection with org as '$SFDX_ADMIN_USERNAME'." &&
 sfdx force:auth:jwt:grant --clientid $SFDC_WORKBENCH_APP_CLIENT_ID --jwtkeyfile $HOME/assets/server.key -u $SFDX_ADMIN_USERNAME --setalias sfdx-org-admin &&
-
 rm server.key &&
 
-printf "List orgs:\n"
+printf "\nList orgs...\n\n"
 sfdx force:org:list 
 
-printf "List plugins:\n"
+printf "\nList plugins:\n"
 sfdx plugins
 
-printf "List O2E commands:\n"
+printf "\nList O2E commands:\n"
 sfdx commands | grep o2e11
